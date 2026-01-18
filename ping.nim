@@ -30,10 +30,15 @@ proc ping(client: HttpClient, url: string, nRequests: int = 1, headRequest = fal
 
 when isMainModule:
     if paramCount() < 2:
-        quit "Usage: http-ping <url> <nRequests>", QuitFailure
+        quit "Usage: ping <url> <nRequests> [--head]", QuitFailure
+
     let url = paramStr(1)
     if not isValidUrl(url):
         quit "Invalid URL format", QuitFailure
+
+    let nRequests = parseInt(paramStr(2))
+    let useHead = paramCount() >= 3 and paramStr(3) == "--head"
+
     let client = newHttpClient()
-    ping(client, url, parseInt(paramStr(2)))
+    ping(client, url, nRequests, useHead)
 
