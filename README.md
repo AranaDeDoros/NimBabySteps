@@ -14,7 +14,7 @@ Performs one or more HTTP (or HEAD) requests and reports response time.
 **Usage**
 
 ```bash
-nim c -r ping.nim <url> <nRequests>
+nim c -r ping.nim <url> <nRequests> [--head]
 nim c -r ping.nim https://example.com 5
 ```
 
