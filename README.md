@@ -18,6 +18,8 @@ nim c -r ping.nim <url> <nRequests> [--head]
 nim c -r ping.nim https://example.com 5
 ```
 
+---
+
 ### 2. certCheck
 
 Checks the TLS certificate expiration date of a remote host. This was a PITA.
@@ -30,3 +32,18 @@ Checks the TLS certificate expiration date of a remote host. This was a PITA.
 nim c -r certCheck.nim <hostname>
 nim c -r certCheck.nim example.com
 ```
+
+---
+
+### 3. isPortInUse
+
+Checks whether a port is in use.
+
+**Usage**
+
+```bash
+nim c -r isPortInUse.nim <port> [port...]
+nim c -r isPortInUse.nim 80 21
+```
+
+---
