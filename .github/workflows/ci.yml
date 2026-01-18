@@ -21,5 +21,4 @@ jobs:
 
       - name: Compile scripts
         run: |
-          nim c -d:ssl http_ping.nim
-          nim c -d:ssl certCheck.nim
+            find . -maxdepth 1 -name '*.nim' -print -exec nim c -d:ssl {} \;
