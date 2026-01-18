@@ -14,8 +14,8 @@ Performs one or more HTTP (or HEAD) requests and reports response time.
 **Usage**
 
 ```bash
-nim c -r http_ping.nim <url> <nRequests>
-nim c -r http_ping.nim https://example.com 5
+nim c -r ping.nim <url> <nRequests>
+nim c -r ping.nim https://example.com 5
 ```
 
 ### 2. certCheck
