@@ -1,0 +1,25 @@
+name: Nim CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Nim
+        uses: nim-lang/setup-nim@v2
+        with:
+          nim-version: stable
+
+      - name: Install OpenSSL
+        run: sudo apt-get update && sudo apt-get install -y libssl-dev
+
+      - name: Compile scripts
+        run: |
+          nim c -d:ssl http_ping.nim
+          nim c -d:ssl certCheck.nim
