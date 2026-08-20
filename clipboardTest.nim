@@ -27,7 +27,7 @@ when isMainModule:
     if files.len > 0:
         echo "on clipboard:"
         for f in files:
-            let (dir, name, ext) = splitFile(f)
+            let (_, _, ext) = splitFile(f)
             if extensionsAllowed.contains(ext):
                 echo "- ", f
             else:
