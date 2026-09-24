@@ -47,3 +47,29 @@ nim c -r isPortInUse.nim 80 21
 ```
 
 ---
+
+### 4. clipboardTest
+
+Checks whether a file of some extension (images in this case) is currently copied to clipboard.
+
+**Usage**
+
+```bash
+nim c -r clipboardTest.nim <port> [port...]
+nim c -r clipboardTest.nim
+```
+
+---
+
+### 5. hasher
+
+Generates a sha256 hash of a file using streams. Useful when adding hashes to some whitelist.
+
+**Usage**
+
+```bash
+nim c -r hasher [options [-d (for directories), -h]] <path>
+nim c -r hasher your_path
+```
+
+---
