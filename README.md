@@ -55,7 +55,6 @@ Checks whether a file of some extension (images in this case) is currently copie
 **Usage**
 
 ```bash
-nim c -r clipboardTest.nim <port> [port...]
 nim c -r clipboardTest.nim
 ```
 
