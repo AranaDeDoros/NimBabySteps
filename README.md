@@ -1,8 +1,8 @@
-# Nim CLI Experiments
+# Nim First Steps
 
 Just for run.
 
-Small CLI utilities written in Nim as learning exercises.
+Small programs written in Nim for my learning experience.
 
 ## Scripts
 
@@ -70,6 +70,26 @@ Generates a sha256 hash of a file using streams. Useful when adding hashes to so
 ```bash
 nim c -r hasher [options [-d (for directories), -h]] <path>
 nim c -r hasher your_path
+```
+
+---
+
+### 6. docker dsl experiment
+
+Macro to generate a really simple dockerfile using a dsl-like syntax.
+
+**Usage**
+
+```nim
+when isMainModule:
+  block:
+    let d = dockerfile:
+        base "python:3.9-slim"
+        workdir "/app"
+        copy "requirements.txt", "./"
+        run "pip install --no-cache-dir -r requirements.txt"
+
+    echo d
 ```
 
 ---
